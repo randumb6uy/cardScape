@@ -5,34 +5,33 @@ using UnityEngine;
 public class dealCards : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject[] slots;
-    public bool[] isFull;
+    
+    
     public GameObject[] cards;
     GameObject Acard;
     public Transform parent; 
-    List<GameObject> hand = new List<GameObject>();
+    public List<GameObject> hand = new List<GameObject>();
+     public GameObject area;
+    GameObject mouse;
     
+    void Start()
+    {
+    pointer mouse = area.GetComponent<pointer>();
+    }
     public void OnClick()
     {
-        
-        for (int i = 0; i < slots.Length ; i++)
+        for (int i = 0; i < 6 ; i++)
         {
-            if (isFull[i] == false)
-            {
-                //generates a random no for random card selection
-                int rand = Random.Range(0 , cards.Length);
-                //instantiantes the prefab as gameobject with random card from array
-                Acard = Instantiate(cards[rand] , slots[i].transform.position ,  Quaternion.identity) as GameObject;   
-                //parents it to canvas
-                Acard.transform.SetParent(parent);
-                //tells that this slot is occupied
-                isFull[i] = true;
-                //adds it to hand
-                hand.Add(Acard);
-            }   
+            int rand = Random.Range(0 , cards.Length);
+            //instantiantes the prefab as gameobject with random card from array
+            Acard = Instantiate(cards[rand] , transform.position ,  Quaternion.identity) as GameObject;   
+            //parents it to canvas
+            Acard.transform.SetParent(parent);
+            hand.Add(Acard);
+              
         }    
     }
-
+        
 
    
 }
