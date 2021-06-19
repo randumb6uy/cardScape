@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 4093416956533802223}
   - component: {fileID: 6321905469080720429}
   - component: {fileID: 7872144463208584284}
+  - component: {fileID: 608835958144180312}
   m_Layer: 5
   m_Name: heal
   m_TagString: Untagged
@@ -249,10 +250,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: 204e705ed889e824a8c52d91b32df1c8, type: 2}
-  _name: {fileID: 0}
-  description: {fileID: 0}
-  cost: {fileID: 0}
-  artwork: {fileID: 0}
+  _name: {fileID: 4093416957230401230}
+  description: {fileID: 8254002451694631068}
+  cost: {fileID: 8370049186324173162}
+  artwork: {fileID: 4093416955934183333}
 --- !u!114 &6321905469080720429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +286,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f38ea80615f5ea4a965ebf951bf562d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &608835958144180312
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4093416956533802217}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4093416957230401224
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,17 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class pointer : MonoBehaviour ,IPointerExitHandler , IPointerEnterHandler
+public class pointer : MonoBehaviour ,IDropHandler
 {
-    
-   public bool isInImage;
-  public void OnPointerEnter(PointerEventData eventData)
+  GameObject image;
+  GameObject Mger;
+  Manager Mg;
+  
+  
+  private void Start() 
   {
-    isInImage = true;  
-  }  
-  public void  OnPointerExit(PointerEventData eventData)
-  { 
-    isInImage = false;
-  }
+    Mger = GameObject.FindWithTag("manager");
+    image = GameObject.FindWithTag("hand");
+    Mg = Mger.GetComponent<Manager>();
     
+  }
+   public void  OnDrop(PointerEventData eventData)
+   {
+     
+      Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
+      if(d != null)
+      {
+        
+       
+        
+      }
+   } 
 }

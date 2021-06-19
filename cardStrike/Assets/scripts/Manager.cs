@@ -11,18 +11,13 @@ public class Manager : MonoBehaviour
     GameObject Acard;
     public Transform parent; 
     public List<GameObject> hand = new List<GameObject>();
-    public GameObject area;
-    public GameObject refrence;
-    pointer mouse;
-    dragNdrop dragChecker;
+     public bool full;
+  
     List<GameObject> fireCards = new List<GameObject>();
-    void Start()
-    {
-    mouse = GameObject.FindGameObjectWithTag("hand").GetComponent<pointer>();
-    dragChecker = GameObject.FindGameObjectWithTag("decoy").GetComponent<dragNdrop>();
-    }
+    
     public void OnClick()
     {
+        
         for (int i = 0; i < 6 ; i++)
         {
             int rand = Random.Range(0 , cards.Length);
@@ -31,8 +26,8 @@ public class Manager : MonoBehaviour
             //parents it to canvas
             Acard.transform.SetParent(parent);
             hand.Add(Acard);
-              
         }    
+       
     }
         
 
