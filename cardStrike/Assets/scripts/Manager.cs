@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class dealCards : MonoBehaviour
+public class Manager : MonoBehaviour
 {
     // Start is called before the first frame update
     
@@ -11,12 +11,15 @@ public class dealCards : MonoBehaviour
     GameObject Acard;
     public Transform parent; 
     public List<GameObject> hand = new List<GameObject>();
-     public GameObject area;
-    GameObject mouse;
-    
+    public GameObject area;
+    public GameObject refrence;
+    pointer mouse;
+    dragNdrop dragChecker;
+    List<GameObject> fireCards = new List<GameObject>();
     void Start()
     {
-    pointer mouse = area.GetComponent<pointer>();
+    mouse = GameObject.FindGameObjectWithTag("hand").GetComponent<pointer>();
+    dragChecker = GameObject.FindGameObjectWithTag("decoy").GetComponent<dragNdrop>();
     }
     public void OnClick()
     {

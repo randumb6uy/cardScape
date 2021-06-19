@@ -6,6 +6,7 @@ TagManager:
   tags:
   - hand
   - canvas
+  - decoy
   layers:
   - Default
   - TransparentFX

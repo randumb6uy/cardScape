@@ -5,8 +5,12 @@ using UnityEngine.EventSystems;
 public class dragNdrop : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandler
 {
     bool isDragging;
-    bool hasExitedSprite;
-    bool hasEnteredSrite;
+    pointer mouse;
+    
+    private void Awake() 
+    {
+     mouse = GameObject.FindGameObjectWithTag("hand").GetComponent<pointer>();   
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         isDragging = true;
@@ -18,7 +22,12 @@ public class dragNdrop : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHa
     public void OnEndDrag(PointerEventData eventData)
     {
         isDragging = false;
+        
+        if (mouse.isInImage == true)
+        {
+            
+        }
     }
-
+    
     
 }

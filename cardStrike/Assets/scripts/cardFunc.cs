@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class cardDisplay : MonoBehaviour
+public class cardFunc : MonoBehaviour
 {
     
     public Card card;
