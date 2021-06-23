@@ -21,11 +21,11 @@ public class pointer : MonoBehaviour ,IDropHandler
    {
      
       Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
+      cardFunc f = eventData.pointerDrag.GetComponent<cardFunc>();
       if(d != null)
       {
-        
-       
-        
+        d.originalParent = this.transform;
+        f.cast(Mg.enemyHealth,Mg.ourHealth,Mg.energy); 
       }
    } 
 }

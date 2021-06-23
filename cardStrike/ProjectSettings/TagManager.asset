@@ -8,6 +8,8 @@ TagManager:
   - canvas
   - decoy
   - manager
+  - area
+  - deck
   layers:
   - Default
   - TransparentFX
