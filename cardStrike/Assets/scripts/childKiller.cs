@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class childKiller : MonoBehaviour
 {
-    
    
+    GameObject hand;
     public float delay;
     Manager mg;
     private void Awake()
+    
     {
-    mg = GameObject.FindWithTag("manager");
+    mg = GameObject.FindWithTag("manager").GetComponent<Manager>();
+    hand = GameObject.FindWithTag("hand");  
     }
     void Update()
     {
@@ -19,10 +21,17 @@ public class childKiller : MonoBehaviour
             for (int i = 0; i < transform.childCount; i++)
             {
                 GameObject child = this.transform.GetChild(i).gameObject;
-                mg.click();
+               
                 Destroy(child,delay);
                 
+                if (hand.transform.childCount < 6)
+                {
+                    mg.deal();
+                    
+                }
             }   
         }    
+    
     }
-}
+    
+}    

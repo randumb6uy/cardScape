@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Manager : MonoBehaviour
 {
@@ -10,29 +11,48 @@ public class Manager : MonoBehaviour
     public GameObject[] cards;
     GameObject Acard;
     public Transform parent; 
-    GameObject hand;
+    //GameObject hand;
     childKiller killer;
-    public bool full;
-    public float enemyHealth;
-    public float ourHealth;
-    public int energy; 
-    List<GameObject> fireCards = new List<GameObject>();
-    public bool isPlayed;
-    private void Awake() 
+    
+    
+    
+        List<GameObject> fireCards = new List<GameObject>();
+    public enum currentTurn
     {
-    hand = GameObject.FindWithTag("hand");  
+        player,
+        enemy
     }
-    public void click() 
+    public currentTurn turn;
+     
+     private void Awake() 
+     {
+        //hand = GameObject.FindWithTag("hand");
+     }
+      private void Start() 
+    {
+        while (parent.childCount <= 3)
+        {
+            deal();
+        }   
+        
+    }
+    private void Update() 
+    {
+        if (parent.childCount < 4)
+        {
+            deal();
+        }
+       
+    }
+    public void deal()
     {
         int rand = Random.Range(0 , cards.Length);
         //instantiantes the prefab as gameobject with random card from array
+            
         Acard = Instantiate(cards[rand] , transform.position ,  Quaternion.identity) as GameObject;   
         //parents it to canvas
         Acard.transform.SetParent(parent);
-    }
-    
-        
-        
+    }   
             
         
     
