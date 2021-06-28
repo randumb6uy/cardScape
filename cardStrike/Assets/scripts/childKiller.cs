@@ -24,11 +24,7 @@ public class childKiller : MonoBehaviour
                
                 Destroy(child,delay);
                 
-                if (hand.transform.childCount < 6)
-                {
-                    mg.deal();
-                    
-                }
+               
             }   
         }    
     

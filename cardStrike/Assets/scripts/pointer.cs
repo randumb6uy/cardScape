@@ -5,18 +5,9 @@ using UnityEngine.EventSystems;
 
 public class pointer : MonoBehaviour ,IDropHandler
 {
-  GameObject image;
-  GameObject Mger;
-  Manager Mg;
   
   
-  private void Start() 
-  {
-    Mger = GameObject.FindWithTag("manager");
-    image = GameObject.FindWithTag("hand");
-    Mg = Mger.GetComponent<Manager>();
-    
-  }
+  
    public void  OnDrop(PointerEventData eventData)
    {
      
