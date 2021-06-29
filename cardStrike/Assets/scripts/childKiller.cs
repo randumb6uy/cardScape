@@ -23,7 +23,11 @@ public class childKiller : MonoBehaviour
                 GameObject child = this.transform.GetChild(i).gameObject;
                
                 Destroy(child,delay);
-                
+                Debug.Log("card casted");
+                if (hand.transform.childCount <6)
+                {
+                    mg.deal();
+                }
                
             }   
         }    
