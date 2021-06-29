@@ -1,2 +1,2 @@
-# CardStrike
-help
+# CardScape
+h e l p
