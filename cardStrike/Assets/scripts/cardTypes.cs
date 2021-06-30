@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum cardTypes 
 {
-sword_slash,
-shiled_block   
+attack,
+defence,
+heal   
 }

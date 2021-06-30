@@ -6,14 +6,40 @@ public class cardFunc : MonoBehaviour
 {
     // Start is called before the first frame update
     //public Image artwork;
-    public int energyReq;
-    public card card;
-    void Start()
+    public int energy;
+    public string _name;
+    battleSystem System;
+    public cardTypes type;
+    public int dmg;
+    public int defence;
+    public int heal;
+    private void Start() 
     {
-        //artwork.sprite = card.icon;
-        energyReq = card.cost;
+    System = GameObject.FindWithTag("handler").GetComponent<battleSystem>();
     }
-    
-    // Update is called once per frame
+    public void func()
+    {
+        if (type == cardTypes.attack)
+        {
+            
+            Debug.Log(dmg);
+            if (System.enemyUnit.health < dmg)
+            {
+                System.enemyUnit.health = 0;  
+            }else
+            {
+            System.enemyUnit.health -= dmg;
+            }
+            System.enemyHud.SetHP(System.enemyUnit.health);    
+        }  
+        else if (type == cardTypes.defence)
+        {
+            Debug.Log(defence); 
+        } 
+        else if (type == cardTypes.heal)
+        {
+            Debug.Log(heal);   
+        }
+    }
     
 }

@@ -8,6 +8,7 @@ public class childKiller : MonoBehaviour
     GameObject hand;
     public float delay;
     Manager mg;
+    public battleSystem system;
     private void Awake()
     
     {
@@ -23,10 +24,12 @@ public class childKiller : MonoBehaviour
                 GameObject child = this.transform.GetChild(i).gameObject;
                
                 Destroy(child,delay);
-                Debug.Log("card casted");
+                
                 if (hand.transform.childCount <6)
                 {
                     mg.deal();
+                    child.GetComponent<cardFunc>().func();
+                    Debug.Log(system.enemyUnit.health);
                 }
                
             }   

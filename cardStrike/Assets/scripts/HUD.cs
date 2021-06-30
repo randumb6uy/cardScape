@@ -13,5 +13,9 @@ public class HUD : MonoBehaviour
        hpSlider.maxValue = unit.maxHealth;
        hpSlider.value  = unit.health;
        
-   }
+    }
+    public void SetHP(int HP)
+    {
+        hpSlider.value = HP;
+    }
 }

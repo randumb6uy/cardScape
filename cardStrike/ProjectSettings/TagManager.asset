@@ -10,6 +10,7 @@ TagManager:
   - manager
   - area
   - deck
+  - handler
   layers:
   - Default
   - TransparentFX
