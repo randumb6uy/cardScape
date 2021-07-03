@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public enum BattleState{start , playerTurn,enemyTurn , win ,loss }
 public class battleSystem : MonoBehaviour
 {
@@ -13,9 +14,11 @@ public class battleSystem : MonoBehaviour
     public unit enemyUnit;
     public unit playerUnit;
     public HUD playerHud;
-    public Text dialouge;
+    public TextMeshProUGUI dialouge;
     public HUD enemyHud;
     public GameObject currentEnemy;
+    public Slider energySlider;
+    public TextMeshProUGUI energyStatus;
     void Start()
     {
      state = BattleState.start;
@@ -38,6 +41,8 @@ public class battleSystem : MonoBehaviour
         
 
         dialouge.text = "prepare your move !";
+        energySlider.maxValue = playerUnit.maxEnergy;
+        energySlider.value = playerUnit.maxEnergy;
         
         playerHud.SetHud(playerUnit);
         enemyHud.SetHud(enemyUnit);
@@ -45,11 +50,14 @@ public class battleSystem : MonoBehaviour
         state = BattleState.playerTurn;
         
     }
+    
+    public void SetNrg(int energy)
+    {
+        energySlider.value = energy;
+        
+    }
     private void Update() 
     {
-        if (enemyUnit != null)
-        {
-//            Debug.Log("enemy is ready");    
-        }   
+        energyStatus.text = playerUnit.energy.ToString();
     }
 }

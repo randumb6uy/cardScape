@@ -13,25 +13,30 @@ public class cardFunc : MonoBehaviour
     public int dmg;
     public int defence;
     public int heal;
+    public cardAcces acces;
     private void Start() 
     {
     System = GameObject.FindWithTag("handler").GetComponent<battleSystem>();
     }
     public void func()
     {
+        
+        
         if (type == cardTypes.attack)
         {
-            
+            System.playerUnit.energy -= energy;
             Debug.Log(dmg);
             if (System.enemyUnit.health < dmg)
             {
                 System.enemyUnit.health = 0;  
-            }else
-            {
-            System.enemyUnit.health -= dmg;
             }
-            System.enemyHud.SetHP(System.enemyUnit.health);    
-        }  
+            else
+            {
+                System.enemyUnit.health -= dmg;
+                System.enemyHud.SetHP(System.enemyUnit.health); 
+                System.SetNrg(System.playerUnit.energy);
+            }    
+        }      
         else if (type == cardTypes.defence)
         {
             Debug.Log(defence); 
@@ -39,7 +44,8 @@ public class cardFunc : MonoBehaviour
         else if (type == cardTypes.heal)
         {
             Debug.Log(heal);   
-        }
+        }   
+        
     }
     
 }

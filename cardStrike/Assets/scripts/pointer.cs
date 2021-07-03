@@ -15,8 +15,7 @@ public class pointer : MonoBehaviour ,IDropHandler
       
       if(d != null)
       {
-        d.originalParent = this.transform;
-         
+        d.originalParent = this.transform; 
       }
    } 
 }

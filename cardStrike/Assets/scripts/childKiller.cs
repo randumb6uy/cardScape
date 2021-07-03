@@ -22,15 +22,21 @@ public class childKiller : MonoBehaviour
             for (int i = 0; i < transform.childCount; i++)
             {
                 GameObject child = this.transform.GetChild(i).gameObject;
-               
-                Destroy(child,delay);
                 
-                if (hand.transform.childCount <6)
-                {
-                    mg.deal();
+               
+               
+                    Destroy(child,delay);
+                    Debug.Log("casted");
                     child.GetComponent<cardFunc>().func();
                     Debug.Log(system.enemyUnit.health);
-                }
+                    Debug.Log(system.playerUnit.energy);
+                    if (hand.transform.childCount <6)
+                    {
+                        mg.deal();
+                       
+                    }   
+               
+               
                
             }   
         }    

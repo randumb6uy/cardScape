@@ -7,7 +7,7 @@ public class Draggable : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHa
     
    
     public Transform originalParent = null;
-   
+    
     public void OnBeginDrag(PointerEventData eventData)
     {
         
@@ -18,6 +18,7 @@ public class Draggable : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHa
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = eventData.position;
+        
     }
     public void OnEndDrag(PointerEventData eventData)
     {
@@ -26,8 +27,8 @@ public class Draggable : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHa
         
     
     }
-    
-        
+   
+      
     
     
 }
