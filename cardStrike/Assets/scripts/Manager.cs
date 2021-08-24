@@ -11,16 +11,19 @@ public class Manager : MonoBehaviour
     public Transform parent;
     private void Start() 
     {
-        for (int i = 0; i < 6; i++)
+        
         {
             deal();
         }    
     }
     public void deal()
     {
+        for (int i = 0; i < 6; i++)
+        {
         int rand = Random.Range(0 , cards.Length);
         card = Instantiate(cards[rand] , transform.position , Quaternion.identity) as GameObject;
         card.transform.SetParent(parent);
+        }
     }    
     
         

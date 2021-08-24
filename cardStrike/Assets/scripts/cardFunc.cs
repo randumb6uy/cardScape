@@ -24,18 +24,22 @@ public class cardFunc : MonoBehaviour
         
         if (type == cardTypes.attack)
         {
-            System.playerUnit.energy -= energy;
-            Debug.Log(dmg);
-            if (System.enemyUnit.health < dmg)
+            if (System.playerUnit.energy >= energy)
             {
-                System.enemyUnit.health = 0;  
+                System.playerUnit.energy -= energy;
+                Debug.Log(dmg);
+                if (System.enemyUnit.health < dmg)
+                {
+                    System.enemyUnit.health = 0;  
+                }
+                else
+                {
+                    System.enemyUnit.health -= dmg;
+                    System.enemyHud.SetHP(System.enemyUnit.health); 
+                    System.SetNrg(System.playerUnit.energy);
+                }    
             }
-            else
-            {
-                System.enemyUnit.health -= dmg;
-                System.enemyHud.SetHP(System.enemyUnit.health); 
-                System.SetNrg(System.playerUnit.energy);
-            }    
+               
         }      
         else if (type == cardTypes.defence)
         {
@@ -45,7 +49,9 @@ public class cardFunc : MonoBehaviour
         {
             Debug.Log(heal);   
         }   
-        
+
+      
     }
     
+   
 }

@@ -19,6 +19,7 @@ public class battleSystem : MonoBehaviour
     public GameObject currentEnemy;
     public Slider energySlider;
     public TextMeshProUGUI energyStatus;
+    public Transform hand;
     void Start()
     {
      state = BattleState.start;
@@ -48,6 +49,7 @@ public class battleSystem : MonoBehaviour
         enemyHud.SetHud(enemyUnit);
         
         state = BattleState.playerTurn;
+
         
     }
     
@@ -59,5 +61,6 @@ public class battleSystem : MonoBehaviour
     private void Update() 
     {
         energyStatus.text = playerUnit.energy.ToString();
+       
     }
 }
